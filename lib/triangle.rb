@@ -19,7 +19,7 @@ class Triangle
     end
   end
   def all_eql?(sides)
-    sides.all? {|side| sides[0] != side}
+    sides.all? {|side| sides[0] == side}
   end
 
 # Custom Errors
