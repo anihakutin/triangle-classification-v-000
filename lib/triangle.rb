@@ -8,7 +8,7 @@ class Triangle
   end
   def kind
     sides = [side1, side2, side3]
-    if sides.any?{|s| s < 1}
+    if sides.any?{|s| s <= 0}
       raise TriangleError
     elsif [side1, side2, side3].uniq.size == 1
       :equilateral
