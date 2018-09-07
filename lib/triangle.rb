@@ -8,9 +8,9 @@ class Triangle
   end
   def kind
     sides = [side1, side2, side3]
-    if sides.all? {|side| sides[0] == side}
+    if eql_sides?(sides)
       :equilateral
-    elsif sides.any? {|side| sides[0] == side}
+    elsif sides.any? {|side| sides[0] == side} && eql_sides?(sides)
       :isosceles
     elsif !eql_sides?(sides)
       :scalene
