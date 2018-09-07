@@ -7,7 +7,7 @@ class Triangle
     @side3 = side3
   end
   def kind
-    sides = [side1, side2, side3]
+    sides = [side1, side2, side3].sort
     if sides.any?{|s| s <= 0}
       raise TriangleError
     elsif [side1, side2, side3].uniq.size == 1
