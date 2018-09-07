@@ -12,7 +12,7 @@ class Triangle
       :equilateral
     elsif sides.any? {|side| sides[0] == side && sides[1] != side}
       :isosceles
-    elsif sides.all? {|side| sides[0] != side}
+    elsif sides.all_eql?(sides)
       :scalene
     else
       raise TriangleError
