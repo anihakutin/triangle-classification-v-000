@@ -7,20 +7,17 @@ class Triangle
     @side3 = side3
   end
   def kind
-    sides = [side1, side2, side3]
-    if eql_sides?(sides)
+    if [a,b,c].uniq.size == 1
       :equilateral
-    elsif sides.any? {|side| sides[0] == side} && eql_sides?(sides)
+    elsif [a,b,c].uniq.size == 2
       :isosceles
-    elsif !eql_sides?(sides)
-      :scalene
+    elsif [a,b,c].uniq.size == 3
+      :scalene      
     else
       raise TriangleError
     end
   end
-  def eql_sides?(sides)
-    sides.uniq.length == 1
-  end
+
 
 # Custom Errors
   class TriangleError < StandardError
