@@ -18,8 +18,8 @@ class Triangle
       raise TriangleError
     end
   end
-  def not_eql?(sides)
-    sides.uniq.length == false
+  def eql_sides?(sides)
+    sides.uniq.length == 1
   end
 
 # Custom Errors
