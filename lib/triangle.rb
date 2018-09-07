@@ -10,16 +10,16 @@ class Triangle
     sides = [side1, side2, side3]
     if sides.all? {|side| sides[0] == side}
       :equilateral
-    elsif sides.any? {|side| sides[0] == side && sides[1] != side}
+    elsif sides.any? {|side| sides[0] == side && all_eql?(sides)}
       :isosceles
-    elsif sides.all_eql?(sides)
+    elsif !sides.all_eql?(sides)
       :scalene
     else
       raise TriangleError
     end
   end
-  def all_eql?(sides)
-    sides.all? {|side| sides[0] == side}
+  def not_eql?(sides)
+    sides.all? {|side| sides[0] != side}
   end
 
 # Custom Errors
