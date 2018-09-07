@@ -19,7 +19,7 @@ class Triangle
     end
   end
   def not_eql?(sides)
-    sides.all? {|side| sides[0] != side}
+    sides.uniq.length == false
   end
 
 # Custom Errors
