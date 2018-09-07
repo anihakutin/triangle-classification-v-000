@@ -10,9 +10,9 @@ class Triangle
     sides = [side1, side2, side3]
     if sides.all? {|side| sides[0] == side}
       :equilateral
-    elsif not_eql?(sides)
-      :scalene
     elsif !eql_sides?(sides)
+      :scalene
+    elsif sides.any? {|side| sides[0] == side}
       :isosceles
     else
       raise TriangleError
