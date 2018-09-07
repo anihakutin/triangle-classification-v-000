@@ -7,12 +7,12 @@ class Triangle
     @side3 = side3
   end
   def kind
-    if [a,b,c].uniq.size == 1
+    if [side1, side2, side3].uniq.size == 1
       :equilateral
-    elsif [a,b,c].uniq.size == 2
+    elsif [side1, side2, side3].uniq.size == 2
       :isosceles
-    elsif [a,b,c].uniq.size == 3
-      :scalene      
+    elsif [side1, side2, side3].uniq.size == 3
+      :scalene
     else
       raise TriangleError
     end
